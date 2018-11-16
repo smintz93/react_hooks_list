@@ -1,6 +1,14 @@
 // experimenting with react hooks
 import React, { useState } from 'react';
 
+function Todo({ todo, index })  {
+  return(
+    <div className="todo">
+      {todo.text}
+    </div>
+  )
+}
+
 function App(){
   const [todos, setTodos] = useState([
     { text: "Learn about React",
@@ -17,7 +25,9 @@ function App(){
   return (
     <div className="app">
       <div className="todo-list">
-        
+          {todos.map((todo, index) => (
+            <Todo key={index} index={index} todo={todo}/>
+          ))}  
       </div>
     </div>
 
