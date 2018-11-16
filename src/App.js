@@ -1,11 +1,29 @@
 // experimenting with react hooks
 import React, { useState } from 'react';
+import './App.css'
 
 function Todo({ todo, index })  {
   return(
-    <div className="todo">
-      {todo.text}
-    </div>
+    <div className="todo">{todo.text}</div>
+  )
+}
+
+// this form needs state
+function TodoForm({ addToto }){
+  const [value, setValue] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!value) return;
+    addToto(value);
+    setValue('');
+
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" className="input" value={value} onChange={e => setValue(e.target.value)} />
+    </form>
   )
 }
 
