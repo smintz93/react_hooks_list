@@ -38,13 +38,13 @@ function TodoForm({ addToto }){
 
 function App(){
   const [todos, setTodos] = useState([
-    { text: "Learn about React",
+    { text: "Dining Room Table",
       isCompleted: false 
     },
-    { text: "Meet friend for lunch",
+    { text: "TV",
       isCompleted: false 
     },
-    { text: "Build really cool todo app",
+    { text: "Nightstands",
       isCompleted: false 
     }
   ]);
@@ -68,6 +68,7 @@ function App(){
 
   return (
     <div className="app">
+      <h1>Christmas List</h1>
       <div className="todo-list">
           {todos.map((todo, index) => (
             <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} deleteTodo={deleteTodo}/>

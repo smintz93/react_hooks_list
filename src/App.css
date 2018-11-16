@@ -1,19 +1,19 @@
 .app {
-  background: #209cee;
+  background: #079f41;
   padding: 30px;
   height: 100vh;
 }
 
 .todo-list {
-  background: #e8e8e8;
+  background: #fb5e5e;
   border-radius: 4px;
   padding: 5px;
   max-width: 400px;
 }
 
 .todo {
-  background: #fff;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  background: #fb5e5e;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
   padding: 3px 10px;
   font-size: 12px;
   margin-bottom: 6px;
