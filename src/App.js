@@ -17,12 +17,15 @@ function TodoForm({ addToto }){
     if(!value) return;
     addToto(value);
     setValue('');
-
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" className="input" value={value} onChange={e => setValue(e.target.value)} />
+      <input type="text" 
+      className="input" 
+      value={value} 
+      placeholder="Add Todo..."
+      onChange={e => setValue(e.target.value)} />
     </form>
   )
 }
@@ -40,12 +43,18 @@ function App(){
     }
   ]);
 
+  const addToto = (text) => {
+    const newTodos = [...todos, { text }]
+    setTodos(newTodos)
+  }
+
   return (
     <div className="app">
       <div className="todo-list">
           {todos.map((todo, index) => (
             <Todo key={index} index={index} todo={todo}/>
-          ))}  
+          ))}
+          <TodoForm addToto={addToto}/>  
       </div>
     </div>
 
