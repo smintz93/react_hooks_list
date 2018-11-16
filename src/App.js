@@ -4,8 +4,8 @@ import './App.css'
 
 function Todo({ todo, index, completeTodo, deleteTodo })  {
   return(
-    <div style={{textDecoration: todo.isCompleted ? "line-through" : "" }}
-    className="todo">{todo.text}<li>{todo.gift}</li>
+    <div style={{color: todo.isCompleted ? "green" : "" }}
+    className="todo"><h3>{todo.text}</h3><li>{todo.gift}</li>
     <div>
       <button onClick={() => completeTodo(index)}>Complete</button>
       <button onClick={() => deleteTodo(index)}>x</button>
@@ -21,7 +21,6 @@ function TodoForm({ addTodo }){
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handleSubmit is being called')
     if(!text || !gift) return;
     addTodo(text, gift);
     setText('');
@@ -33,14 +32,14 @@ function TodoForm({ addTodo }){
       <input type="text" 
       className="input" 
       value={text} 
-      placeholder="Add Todo..."
-      onChange={e => setText(e.target.value, console.log(e.target.value, "This is text value"))} />
+      placeholder="Add Name..."
+      onChange={e => setText(e.target.value)} />
       <input type="text" 
       className="input" 
       value={gift} 
       placeholder="Add Gift..."
-      onChange={e => setGift(e.target.value, console.log(e.target.value, "this is gift value"))} />
-    <button onClick={handleSubmit}>Add to List</button>
+      onChange={e => setGift(e.target.value)} />
+     <button onClick={handleSubmit}>Add to List</button>
     </form>
 
   )
@@ -48,7 +47,7 @@ function TodoForm({ addTodo }){
 
 function App(){
   const [todos, setTodos] = useState([
-    { text: "Jeff",
+    { text: "Sam",
       gift: "tv",
       isCompleted: false 
     },
